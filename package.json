@@ -2,7 +2,7 @@
   "name": "filter-where",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "version": "1.0.0",
-  "description": "filter-where",
+  "description": "Filter an array using any combination of scalars, object queries, functions or regular expressions.",
   "repository": "https://github.com/75lb/filter-where.git",
   "license": "MIT",
   "main": "./lib/filter-where.js",

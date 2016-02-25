@@ -6,7 +6,7 @@
 
 <a name="module_filter-where"></a>
 ## filter-where
-Filter an array using object queries, functions, regular expressions, scalars or a combination of the above.
+Filter an array using any combination of scalars, object queries, functions or regular expressions.
 
 
 <a name="exp_module_filter-where--where"></a>
