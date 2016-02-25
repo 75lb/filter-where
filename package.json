@@ -1,0 +1,28 @@
+{
+  "name": "filter-where",
+  "author": "Lloyd Brookes <75pound@gmail.com>",
+  "version": "0.0.0",
+  "description": "filter-where",
+  "repository": "https://github.com/75lb/filter-where.git",
+  "license": "MIT",
+  "main": "./lib/filter-where.js",
+  "keywords": [
+    "where",
+    "array",
+    "filter",
+    "custom"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "docs": "jsdoc2md2 -t jsdoc2md/README.md lib/*.js > README.md; echo"
+  },
+  "devDependencies": {
+    "tape": "^4.4.0"
+  },
+  "dependencies": {
+    "test-value": "^1.0.1"
+  }
+}
