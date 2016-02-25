@@ -11,8 +11,6 @@ Filter an array using any combination of scalars, object queries, functions or r
 
 <a name="exp_module_filter-where--where"></a>
 ### where(query) ⇒ `function` ⏏
-Deep query an array.
-
 **Kind**: Exported function  
 
 | Param | Type                       | Description         |
