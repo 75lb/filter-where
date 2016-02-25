@@ -6,10 +6,11 @@
 
 <a name="module_filter-where"></a>
 ## filter-where
+Filter an array using object queries, functions, regular expressions, scalars or a combination of the above.
 
 
-<a name="exp_module_filter-where--whereReducer"></a>
-### whereReducer(query) ⇒ `function` ⏏
+<a name="exp_module_filter-where--where"></a>
+### where(query) ⇒ `function` ⏏
 Deep query an array.
 
 **Kind**: Exported function  
@@ -31,26 +32,26 @@ Say you have a recordset:
 
 You can return records with properties matching an exact value:
 ```js
-> a.where(data, { age: 10 })
+> data.filter(where({ age: 10 }))
 [ { name: 'Zhana', age: 10 } ]
 ```
 
 or where NOT the value (prefix the property name with `!`)
 ```js
-> a.where(data, { '!age': 10 })
+> data.filter(where({ '!age': 10 }))
 [ { name: 'Dana', age: 30 }, { name: 'Yana', age: 20 } ]
 ```
 
 match using a function:
 ```js
 > function over10(age){ return age > 10; }
-> a.where(data, { age: over10 })
+> data.filter(where({ age: over10 }))
 [ { name: 'Dana', age: 30 }, { name: 'Yana', age: 20 } ]
 ```
 
 match using a regular expression
 ```js
-> a.where(data, { name: /ana/ })
+> data.filter(where({ name: /ana/ }))
 [ { name: 'Dana', age: 30 },
   { name: 'Yana', age: 20 },
   { name: 'Zhana', age: 10 } ]
@@ -67,14 +68,14 @@ You can query to any arbitrary depth. So with deeper data, like this:
 
 get records with `favourite.colour` values matching `/red/`
 ```js
-> a.where(deepData, { favourite: { colour: /red/ } })
+> deepData.filter(where({ favourite: { colour: /red/ } }))
 [ { name: 'Dana', favourite: { colour: 'light red' } },
   { name: 'Yana', favourite: { colour: 'dark red' } } ]
 ```
 
 if the value you're looking for _maybe_ part of an array, prefix the property name with `+`. Now Zhana is included:
 ```js
-> a.where(deepData, { favourite: { '+colour': /red/ } })
+> deepData.filter(where({ favourite: { '+colour': /red/ } }))
 [ { name: 'Dana', favourite: { colour: 'light red' } },
   { name: 'Yana', favourite: { colour: 'dark red' } },
   { name: 'Zhana', favourite: { colour: [ 'white', 'red' ] } } ]
@@ -85,7 +86,7 @@ you can combine any of the above by supplying an array of queries. Records will 
 > var nameBeginsWithY = { name: /^Y/ }
 > var faveColourIncludesWhite = { favourite: { '+colour': 'white' } }
 
-> a.where(deepData, [ nameBeginsWithY, faveColourIncludesWhite ])
+> deepData.filter(where([ nameBeginsWithY, faveColourIncludesWhite ]))
 [ { name: 'Yana', favourite: { colour: 'dark red' } },
   { name: 'Zhana', favourite: { colour: [ 'white', 'red' ] } } ]
 ```
