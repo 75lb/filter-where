@@ -5,20 +5,20 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 <a name="module_filter-where"></a>
+
 ## filter-where
 Filter an array using any combination of scalars, object queries, functions or regular expressions.
 
-
 <a name="exp_module_filter-where--where"></a>
-### where(query) ⇒ `function` ⏏
+
+### where(query) ⇒ <code>function</code> ⏏
 **Kind**: Exported function  
 
-| Param | Type                       | Description         |
-| ----- | -------------------------- | ------------------- |
-| query | `any` &#124; `Array.<any>` | one or more queries |
+| Param | Type | Description |
+| --- | --- | --- |
+| query | <code>any</code> \| <code>Array.&lt;any&gt;</code> | one or more queries |
 
-
-**Example**
+**Example**  
 Say you have a recordset:
 ```js
 > data = [
@@ -81,17 +81,14 @@ if the value you're looking for _maybe_ part of an array, prefix the property na
 
 you can combine any of the above by supplying an array of queries. Records will be returned if _any_ of the queries match:
 ```js
-> var nameBeginsWithY = { name: /^Y/ }
-> var faveColourIncludesWhite = { favourite: { '+colour': 'white' } }
+> const nameBeginsWithY = { name: /^Y/ }
+> const faveColourIncludesWhite = { favourite: { '+colour': 'white' } }
 
 > deepData.filter(where([ nameBeginsWithY, faveColourIncludesWhite ]))
 [ { name: 'Yana', favourite: { colour: 'dark red' } },
   { name: 'Zhana', favourite: { colour: [ 'white', 'red' ] } } ]
 ```
 
-
-
-
 * * *
 
-&copy; 2016 Lloyd Brookes <75pound@gmail.com>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+&copy; 2016-18 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

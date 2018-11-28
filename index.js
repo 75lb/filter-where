@@ -1,5 +1,4 @@
-'use strict'
-var testValue = require('test-value')
+const testValue = require('test-value')
 
 /**
  * Filter an array using any combination of scalars, object queries, functions or regular expressions.
@@ -75,8 +74,8 @@ module.exports = where
  *
  * you can combine any of the above by supplying an array of queries. Records will be returned if _any_ of the queries match:
  * ```js
- * > var nameBeginsWithY = { name: /^Y/ }
- * > var faveColourIncludesWhite = { favourite: { '+colour': 'white' } }
+ * > const nameBeginsWithY = { name: /^Y/ }
+ * > const faveColourIncludesWhite = { favourite: { '+colour': 'white' } }
  *
  * > deepData.filter(where([ nameBeginsWithY, faveColourIncludesWhite ]))
  * [ { name: 'Yana', favourite: { colour: 'dark red' } },

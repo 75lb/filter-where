@@ -5,7 +5,6 @@
   "description": "Filter an array using any combination of scalars, object queries, functions or regular expressions.",
   "repository": "https://github.com/75lb/filter-where.git",
   "license": "MIT",
-  "main": "./lib/filter-where.js",
   "keywords": [
     "where",
     "array",
@@ -13,16 +12,16 @@
     "custom"
   ],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=6"
   },
   "scripts": {
-    "test": "tape test/*.js",
-    "docs": "jsdoc2md2 -t jsdoc2md/README.md lib/*.js > README.md; echo"
+    "test": "test-runner test.js",
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs index.js > README.md; echo"
   },
   "devDependencies": {
-    "tape": "^4.4.0"
+    "test-runner": "^0.5.1"
   },
   "dependencies": {
-    "test-value": "^1.0.1"
+    "test-value": "^3.0.0"
   }
 }
